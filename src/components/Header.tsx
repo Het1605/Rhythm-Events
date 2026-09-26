@@ -21,8 +21,6 @@ export const Header: React.FC = () => {
     { label: "Timeline", href: "#timeline" },
     { label: "Portfolio", href: "#gallery" },
     { label: "Services", href: "#services" },
-    { label: "Location", href: "#map" },
-    { label: "Contact", href: "#contact" },
   ];
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -102,7 +100,7 @@ export const Header: React.FC = () => {
             href={BUSINESS_INFO.whatsapp.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 text-[#C9513D] hover:bg-[#F1E5D5] rounded-lg transition-colors"
+            className="p-2 text-[#DFB15B] hover:bg-[#2D1115]/5 rounded-lg transition-colors"
             aria-label="WhatsApp enquiry"
           >
             <MessageSquare className="w-5 h-5" />
@@ -110,7 +108,7 @@ export const Header: React.FC = () => {
 
           <button
             onClick={() => setIsMobileOpen(!isMobileOpen)}
-            className="p-2 text-[#481B22] hover:bg-[#F1E5D5] rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9513D]"
+            className="p-2 text-[#2D1115] hover:bg-[#2D1115]/5 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C59B27]"
             aria-label={isMobileOpen ? "Close menu" : "Open menu"}
           >
             {isMobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -120,17 +118,17 @@ export const Header: React.FC = () => {
 
       {/* Mobile Drawer Menu */}
       {isMobileOpen && (
-        <div className="md:hidden bg-[#FFF9F2] border-b border-[#F1E5D5] px-6 py-6 space-y-4 animate-in slide-in-from-top-2 duration-200 shadow-xl">
+        <div className="md:hidden bg-[#FCFBF7] border-b border-[#E5D5BA] px-6 py-6 space-y-4 animate-in slide-in-from-top-2 duration-200 shadow-xl">
           <div className="flex flex-col space-y-3">
             {navLinks.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleLinkClick(e, item.href)}
-                className="text-base font-medium text-[#481B22] hover:text-[#C9513D] py-1 border-b border-[#F1E5D5]/50 flex items-center justify-between"
+                className="text-sm font-semibold tracking-wider uppercase text-[#2D1115] hover:text-[#C59B27] py-2 border-b border-[#E5D5BA]/50 flex items-center justify-between"
               >
                 <span>{item.label}</span>
-                <span className="text-xs text-[#C9513D]">→</span>
+                <span className="text-xs text-[#C59B27]">→</span>
               </a>
             ))}
           </div>
@@ -139,24 +137,24 @@ export const Header: React.FC = () => {
             <a
               href="#contact"
               onClick={(e) => handleLinkClick(e, "#contact")}
-              className="w-full text-center py-3 bg-[#C9513D] text-white font-semibold text-sm rounded-lg"
+              className="w-full text-center py-3.5 gold-gradient-bg text-[#2D1115] font-bold text-xs tracking-wider uppercase rounded-xl shadow-md active:scale-98"
             >
               Plan Your Event
             </a>
 
-            <div className="grid grid-cols-2 gap-2 text-xs">
+            <div className="grid grid-cols-2 gap-2 text-xs font-sans">
               <a
                 href={`tel:${BUSINESS_INFO.phone}`}
-                className="flex items-center justify-center gap-1.5 py-2.5 bg-white border border-[#F1E5D5] rounded-lg text-[#481B22] font-medium"
+                className="flex items-center justify-center gap-1.5 py-2.5 bg-white border border-[#E5D5BA] rounded-xl text-[#2D1115] font-semibold"
               >
-                <Phone className="w-3.5 h-3.5 text-[#C9513D]" />
+                <Phone className="w-3.5 h-3.5 text-[#B3412E]" />
                 Call Now
               </a>
               <a
                 href={BUSINESS_INFO.whatsapp.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-1.5 py-2.5 bg-[#65724A] text-white rounded-lg font-medium"
+                className="flex items-center justify-center gap-1.5 py-2.5 bg-[#2D1115] border border-[#C59B27]/40 text-[#DFB15B] rounded-xl font-semibold"
               >
                 <MessageSquare className="w-3.5 h-3.5" />
                 WhatsApp
