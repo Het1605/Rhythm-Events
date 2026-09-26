@@ -14,7 +14,6 @@ import { PortfolioGallery } from "./components/PortfolioGallery";
 import { EventServices } from "./components/EventServices";
 import { LocalAhmedabad } from "./components/LocalAhmedabad";
 import { WhyRhythm } from "./components/WhyRhythm";
-import { WhatsAppBanner } from "./components/WhatsAppBanner";
 import { ContactEnquiry } from "./components/ContactEnquiry";
 import { GoogleMapSection } from "./components/GoogleMapSection";
 import { Footer } from "./components/Footer";
@@ -54,12 +53,7 @@ export default function App() {
         {/* 10. Why Rhythm Events */}
         <WhyRhythm />
 
-        {/* TODO: Add verified Google customer reviews when available from Rhythm Events owner */}
-
-        {/* 11. Strong WhatsApp CTA Banner */}
-        <WhatsAppBanner />
-
-        {/* 12. Event Enquiry (Direct WhatsApp message generator) */}
+        {/* 11. Event Enquiry (Direct WhatsApp message generator) */}
         <ContactEnquiry />
 
         {/* 13. Interactive Google Map Location */}
