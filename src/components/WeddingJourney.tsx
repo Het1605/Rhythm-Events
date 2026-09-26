@@ -10,25 +10,6 @@ export const WeddingJourney: React.FC = () => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const getStepColor = (index: number) => {
-    switch (index) {
-      case 0:
-        return "bg-[#F1E5D5] text-[#481B22]";
-      case 1:
-        return "bg-[#E7A63A] text-[#481B22]"; // Haldi Yellow
-      case 2:
-        return "bg-[#65724A] text-white"; // Mehendi Green
-      case 3:
-        return "bg-[#481B22] text-[#E7A63A]"; // Sangeet Purple/Maroon
-      case 4:
-        return "bg-[#C9513D] text-white"; // Mandap Red
-      case 5:
-        return "bg-[#481B22] text-white"; // Reception
-      default:
-        return "bg-[#C9513D] text-white";
-    }
-  };
-
   return (
     <section id="timeline" className="py-20 sm:py-28 bg-[#FCFBF7] border-t border-[#C59B27]/20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -140,32 +121,32 @@ export const WeddingJourney: React.FC = () => {
         </div>
 
         {/* MOBILE VIEW: Clean Vertical Timeline */}
-        <div className="block lg:hidden relative pl-6 border-l-2 border-[#E7A63A] space-y-6 my-6">
+        <div className="block lg:hidden relative pl-6 ml-3 border-l-2 border-[#C59B27]/40 space-y-6 my-8">
           {WEDDING_JOURNEY.map((item, index) => (
             <div key={item.step} className="relative">
-              {/* Timeline Node */}
-              <div className="absolute -left-[31px] top-1 w-6 h-6 rounded-full bg-[#FFF9F2] border-2 border-[#C9513D] flex items-center justify-center text-[10px] font-bold text-[#C9513D]">
+              {/* Timeline Node Centered on Line */}
+              <div className="absolute -left-[35px] top-3 w-7 h-7 rounded-full bg-[#2D1115] border-2 border-[#C59B27] flex items-center justify-center text-[10px] font-bold text-[#DFB15B] shadow-sm">
                 {item.step}
               </div>
 
-              <div className="bg-white p-4 rounded-xl border border-[#E2D2C0] shadow-sm flex gap-4 items-center">
+              <div className="bg-[#FCFBF7] p-4 rounded-2xl border border-[#C59B27]/30 shadow-sm flex gap-4 items-center">
                 <img
                   src={item.image}
                   alt={item.name}
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = item.fallbackImage;
                   }}
-                  className="w-20 h-20 rounded-lg object-cover shrink-0"
+                  className="w-20 h-20 rounded-xl object-cover shrink-0 border border-[#C59B27]/25"
                   loading="lazy"
                 />
-                <div>
-                  <span className={`inline-block text-[10px] font-bold px-2 py-0.5 rounded mb-1 ${getStepColor(index)}`}>
+                <div className="min-w-0">
+                  <span className="inline-block text-[10px] font-semibold px-2 py-0.5 rounded shadow-sm bg-[#2D1115]/85 border border-[#C59B27]/30 text-[#DFB15B] mb-1">
                     {item.name} Rasam
                   </span>
-                  <h3 className="font-serif-heading font-bold text-base text-[#481B22]">
+                  <h3 className="font-serif-luxury font-bold text-base text-[#2D1115] truncate">
                     {item.gujaratiTitle}
                   </h3>
-                  <p className="text-xs text-[#481B22]/70 mt-0.5">
+                  <p className="text-xs text-[#5C3A40] mt-0.5 line-clamp-2 font-sans">
                     {item.ceremonyHighlight}
                   </p>
                 </div>
@@ -176,16 +157,16 @@ export const WeddingJourney: React.FC = () => {
 
         {/* Footer Prompt */}
         <div className="mt-12 text-center">
-          <p className="text-xs sm:text-sm text-[#481B22]/70 font-sans mb-4">
-            Whether you need planning for a single function or full multi-day coordination in Ahmedabad:
+          <p className="text-xs sm:text-sm text-[#5C3A40] font-sans mb-4">
+            Whether you need planning for a single sacred function or full multi-day coordination in Ahmedabad:
           </p>
           <a
             href="#contact"
             onClick={scrollToContact}
-            className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#481B22] hover:bg-[#341318] text-white text-xs font-semibold rounded-lg transition-all"
+            className="inline-flex items-center gap-2 px-7 py-3 gold-gradient-bg text-[#2D1115] text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-md active:scale-95"
           >
             <span>Discuss Your Wedding Functions</span>
-            <ArrowRight className="w-3.5 h-3.5 text-[#E7A63A]" />
+            <ArrowRight className="w-3.5 h-3.5 text-[#2D1115]" />
           </a>
         </div>
 

@@ -23,29 +23,6 @@ export const PortfolioGallery: React.FC = () => {
       ? GALLERY_ITEMS
       : GALLERY_ITEMS.filter((item) => item.category === activeFilter);
 
-  const getBadgeColor = (category: string) => {
-    switch (category) {
-      case "Haldi Rasam":
-        return "bg-[#E7A63A] text-[#481B22]";
-      case "Mehendi Rasam":
-        return "bg-[#65724A] text-white";
-      case "Wedding Mandap":
-        return "bg-[#C9513D] text-white";
-      case "Sangeet & Garba":
-        return "bg-[#481B22] text-[#E7A63A] border border-[#E7A63A]/30";
-      case "Reception Décor":
-        return "bg-[#481B22] text-white";
-      case "Engagement":
-        return "bg-[#854D0E] text-white";
-      case "Birthday":
-        return "bg-[#D97706] text-white";
-      case "Corporate":
-        return "bg-[#1E3A8A] text-white";
-      default:
-        return "bg-[#C9513D] text-white";
-    }
-  };
-
   return (
     <section id="gallery" className="py-20 sm:py-28 bg-[#FCFBF7] border-t border-[#C59B27]/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,12 +42,12 @@ export const PortfolioGallery: React.FC = () => {
           </div>
 
           {/* Filter Tabs */}
-          <div className="flex flex-wrap gap-2 p-1.5 bg-white rounded-2xl border border-[#C59B27]/25 shadow-sm">
+          <div className="flex gap-2 p-1.5 bg-white rounded-2xl border border-[#C59B27]/25 shadow-sm overflow-x-auto max-w-full pb-2 sm:pb-1.5 sm:flex-wrap">
             {filters.map((filter) => (
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold tracking-wide transition-all cursor-pointer ${
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold tracking-wide transition-all cursor-pointer whitespace-nowrap shrink-0 ${
                   activeFilter === filter
                     ? "gold-gradient-bg text-[#2D1115] font-bold shadow-sm"
                     : "text-[#5C3A40] hover:text-[#2D1115] hover:bg-[#F8F3EB]"

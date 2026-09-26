@@ -8,27 +8,6 @@ export const CelebrationsGrid: React.FC = () => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const getBadgeStyle = (type: string) => {
-    switch (type) {
-      case "haldi":
-        return "bg-[#E7A63A] text-[#481B22] font-bold";
-      case "mehendi":
-        return "bg-[#65724A] text-white font-bold";
-      case "wedding":
-        return "bg-[#C9513D] text-white font-bold";
-      case "sangeet":
-        return "bg-[#481B22] text-[#E7A63A] font-bold border border-[#E7A63A]/40";
-      case "engagement":
-        return "bg-[#F1E5D5] text-[#481B22] font-bold";
-      case "birthday":
-        return "bg-[#D97706] text-white font-bold";
-      case "corporate":
-        return "bg-[#1E3A8A] text-white font-bold";
-      default:
-        return "bg-[#C9513D] text-white font-bold";
-    }
-  };
-
   const getBadgeText = (type: string) => {
     switch (type) {
       case "haldi":

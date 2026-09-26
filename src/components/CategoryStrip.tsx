@@ -6,19 +6,19 @@ export const CategoryStrip: React.FC = () => {
   const getIcon = (id: string) => {
     switch (id) {
       case "wedding":
-        return <Flame className="w-4 h-4 text-[#C9513D]" />;
+        return <Flame className="w-4 h-4 text-[#B3412E]" />;
       case "engagement":
-        return <Sparkles className="w-4 h-4 text-[#E7A63A]" />;
+        return <Sparkles className="w-4 h-4 text-[#C59B27]" />;
       case "haldi":
-        return <Sun className="w-4 h-4 text-[#E7A63A]" />;
+        return <Sun className="w-4 h-4 text-[#DFB15B]" />;
       case "mehendi":
-        return <Flower2 className="w-4 h-4 text-[#65724A]" />;
+        return <Flower2 className="w-4 h-4 text-[#5A6643]" />;
       case "sangeet":
-        return <Music className="w-4 h-4 text-[#481B22]" />;
+        return <Music className="w-4 h-4 text-[#2D1115]" />;
       case "reception":
-        return <PartyPopper className="w-4 h-4 text-[#C9513D]" />;
+        return <PartyPopper className="w-4 h-4 text-[#B3412E]" />;
       default:
-        return <Sparkles className="w-4 h-4 text-[#C9513D]" />;
+        return <Sparkles className="w-4 h-4 text-[#C59B27]" />;
     }
   };
 
@@ -34,7 +34,7 @@ export const CategoryStrip: React.FC = () => {
           Sacred Ceremonies:
         </div>
 
-        <div className="flex items-center gap-2.5 sm:gap-3.5 justify-between w-full md:w-auto">
+        <div className="flex items-center gap-2.5 sm:gap-3.5 w-auto">
           {QUICK_CATEGORIES.map((cat) => (
             <a
               key={cat.id}

@@ -130,8 +130,8 @@ export const HeroSection: React.FC = () => {
               </div>
 
               {/* Floating Trust Badge */}
-              <div className="absolute -bottom-4 -left-4 sm:-bottom-5 sm:-left-5 bg-white p-3.5 sm:p-4 rounded-2xl shadow-xl border border-[#C59B27]/30 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full gold-gradient-bg flex items-center justify-center text-[#2D1115] shadow-sm">
+              <div className="absolute -bottom-3 left-2 sm:-bottom-5 sm:-left-5 bg-white p-3 sm:p-4 rounded-2xl shadow-xl border border-[#C59B27]/30 flex items-center gap-3 max-w-[92%] sm:max-w-none">
+                <div className="w-10 h-10 rounded-full gold-gradient-bg flex items-center justify-center text-[#2D1115] shadow-sm shrink-0">
                   <Sparkles className="w-5 h-5 text-[#2D1115]" />
                 </div>
                 <div>
