@@ -16,6 +16,7 @@ import { LocalAhmedabad } from "./components/LocalAhmedabad";
 import { WhyRhythm } from "./components/WhyRhythm";
 import { WhatsAppBanner } from "./components/WhatsAppBanner";
 import { ContactEnquiry } from "./components/ContactEnquiry";
+import { GoogleMapSection } from "./components/GoogleMapSection";
 import { Footer } from "./components/Footer";
 import { MobileBottomBar } from "./components/MobileBottomBar";
 
@@ -60,9 +61,12 @@ export default function App() {
 
         {/* 12. Event Enquiry (Direct WhatsApp message generator) */}
         <ContactEnquiry />
+
+        {/* 13. Interactive Google Map Location */}
+        <GoogleMapSection />
       </main>
 
-      {/* 13. Clean Local Footer */}
+      {/* 14. Clean Local Footer */}
       <Footer />
 
       {/* 14. Mobile Sticky Bottom Bar (Call | WhatsApp | Enquire) */}
