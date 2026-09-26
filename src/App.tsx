@@ -22,7 +22,7 @@ import { MobileBottomBar } from "./components/MobileBottomBar";
 
 export default function App() {
   return (
-    <div className="relative min-h-screen bg-[#FFF9F2] text-[#481B22] selection:bg-[#C9513D] selection:text-white font-sans">
+    <div className="relative min-h-screen bg-[#FCFBF7] text-[#2D1115] selection:bg-[#C59B27] selection:text-[#2D1115] font-sans">
       {/* 1. Header Navigation */}
       <Header />
 

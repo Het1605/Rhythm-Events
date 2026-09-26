@@ -9,16 +9,16 @@ export const MobileBottomBar: React.FC = () => {
 
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white/95 backdrop-blur-md border-t border-[#E2D2C0] px-3 py-2 shadow-lg"
+      className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-[#FCFBF7]/95 backdrop-blur-md border-t border-[#C59B27]/30 px-3 py-2.5 shadow-2xl"
       aria-label="Mobile quick actions"
     >
       <div className="grid grid-cols-3 gap-2 max-w-sm mx-auto">
         {/* CALL */}
         <a
           href={`tel:${BUSINESS_INFO.phone}`}
-          className="min-h-[48px] flex flex-col items-center justify-center gap-1 py-1.5 px-1 bg-[#FFF9F2] active:bg-[#F1E5D5] border border-[#E2D2C0] rounded-xl text-[#481B22] font-sans text-[11px] font-semibold tracking-wide transition-colors"
+          className="min-h-[46px] flex flex-col items-center justify-center gap-1 py-1.5 px-1 bg-[#FAF6F0] active:bg-[#E5D5BA] border border-[#E5D5BA] rounded-xl text-[#2D1115] font-sans text-[11px] font-semibold tracking-wider uppercase transition-colors"
         >
-          <Phone className="w-4 h-4 text-[#C9513D]" />
+          <Phone className="w-4 h-4 text-[#B3412E]" />
           <span>Call</span>
         </a>
 
@@ -27,18 +27,18 @@ export const MobileBottomBar: React.FC = () => {
           href={BUSINESS_INFO.whatsapp.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="min-h-[48px] flex flex-col items-center justify-center gap-1 py-1.5 px-1 bg-[#65724A] active:bg-[#525e3b] rounded-xl text-white font-sans text-[11px] font-bold tracking-wide transition-colors shadow-sm"
+          className="min-h-[46px] flex flex-col items-center justify-center gap-1 py-1.5 px-1 bg-[#2D1115] active:bg-[#3D181D] border border-[#C59B27]/40 rounded-xl text-[#DFB15B] font-sans text-[11px] font-bold tracking-wider uppercase transition-colors shadow-sm"
         >
-          <MessageSquare className="w-4 h-4" />
+          <MessageSquare className="w-4 h-4 text-[#DFB15B]" />
           <span>WhatsApp</span>
         </a>
 
         {/* ENQUIRE */}
         <button
           onClick={scrollToContact}
-          className="min-h-[48px] flex flex-col items-center justify-center gap-1 py-1.5 px-1 bg-[#C9513D] active:bg-[#b84330] rounded-xl text-white font-sans text-[11px] font-semibold tracking-wide transition-colors cursor-pointer"
+          className="min-h-[46px] flex flex-col items-center justify-center gap-1 py-1.5 px-1 gold-gradient-bg active:opacity-90 rounded-xl text-[#2D1115] font-sans text-[11px] font-bold tracking-wider uppercase transition-colors cursor-pointer shadow-sm"
         >
-          <Calendar className="w-4 h-4 text-white" />
+          <Calendar className="w-4 h-4 text-[#2D1115]" />
           <span>Enquire</span>
         </button>
       </div>

@@ -17,9 +17,11 @@ export const Header: React.FC = () => {
   const navLinks = [
     { label: "Home", href: "#hero" },
     { label: "About", href: "#about" },
-    { label: "Services", href: "#services" },
     { label: "Celebrations", href: "#celebrations" },
-    { label: "Gallery", href: "#gallery" },
+    { label: "Timeline", href: "#timeline" },
+    { label: "Portfolio", href: "#gallery" },
+    { label: "Services", href: "#services" },
+    { label: "Location", href: "#map" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -36,8 +38,8 @@ export const Header: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-[#FFF9F2]/95 backdrop-blur-md shadow-sm border-b border-[#F1E5D5] py-3.5"
-          : "bg-[#FFF9F2]/90 backdrop-blur-sm py-4 border-b border-[#F1E5D5]/60"
+          ? "bg-[#FCFBF7]/95 backdrop-blur-md shadow-[0_4px_20px_rgba(45,17,21,0.05)] border-b border-[#C59B27]/20 py-3.5"
+          : "bg-[#FCFBF7]/90 backdrop-blur-sm py-4 border-b border-[#C59B27]/15"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -45,32 +47,32 @@ export const Header: React.FC = () => {
         <a
           href="#hero"
           onClick={(e) => handleLinkClick(e, "#hero")}
-          className="flex flex-col group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9513D] rounded-md p-1 -ml-1"
+          className="flex flex-col group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C59B27] rounded-md p-1 -ml-1"
         >
-          <div className="flex items-baseline gap-2">
-            <span className="font-serif-heading font-bold text-2xl sm:text-2xl tracking-tight text-[#481B22]">
+          <div className="flex items-baseline gap-2.5">
+            <span className="font-serif-luxury font-bold text-2xl sm:text-3xl tracking-tight text-[#2D1115] group-hover:text-[#C59B27] transition-colors">
               Rhythm Events
             </span>
-            <span className="text-[11px] font-medium tracking-widest uppercase text-[#C9513D] bg-[#F1E5D5] px-2 py-0.5 rounded-full">
+            <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[#C59B27] bg-[#F8F3EB] border border-[#C59B27]/30 px-2 py-0.5 rounded-full">
               Ahmedabad
             </span>
           </div>
-          <span className="text-[11px] text-[#481B22]/60 tracking-wider">
-            Events • Weddings • Celebrations
+          <span className="text-[10px] text-[#5C3A40] tracking-[0.22em] uppercase font-medium mt-0.5">
+            Weddings • Mandaps • Celebrations
           </span>
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-[#481B22]/80">
+        <nav className="hidden lg:flex items-center gap-6 text-[12px] font-semibold tracking-[0.12em] uppercase text-[#2D1115]/80">
           {navLinks.map((item) => (
             <a
               key={item.label}
               href={item.href}
               onClick={(e) => handleLinkClick(e, item.href)}
-              className="hover:text-[#C9513D] transition-colors py-1 relative group"
+              className="hover:text-[#C59B27] transition-colors py-1 relative group"
             >
               {item.label}
-              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#C9513D] transition-all duration-200 group-hover:w-full" />
+              <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#C59B27] transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
         </nav>
@@ -79,16 +81,16 @@ export const Header: React.FC = () => {
         <div className="hidden md:flex items-center gap-4">
           <a
             href={`tel:${BUSINESS_INFO.phone}`}
-            className="flex items-center gap-1.5 text-xs font-semibold text-[#481B22]/90 hover:text-[#C9513D] transition-colors"
+            className="flex items-center gap-1.5 text-xs font-semibold text-[#2D1115] hover:text-[#C59B27] transition-colors"
           >
-            <Phone className="w-3.5 h-3.5 text-[#C9513D]" />
+            <Phone className="w-3.5 h-3.5 text-[#C59B27]" />
             <span>{BUSINESS_INFO.phone}</span>
           </a>
 
           <a
             href="#contact"
             onClick={(e) => handleLinkClick(e, "#contact")}
-            className="px-5 py-2.5 bg-[#C9513D] hover:bg-[#b84330] text-white text-xs font-semibold tracking-wide rounded-lg transition-all shadow-sm active:scale-95"
+            className="px-5 py-2.5 gold-gradient-bg text-[#2D1115] font-bold text-xs tracking-wider uppercase rounded-xl transition-all shadow-sm hover:shadow-[0_4px_20px_rgba(197,155,39,0.35)] active:scale-95"
           >
             Plan Your Event
           </a>

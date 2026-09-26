@@ -47,33 +47,33 @@ export const PortfolioGallery: React.FC = () => {
   };
 
   return (
-    <section id="gallery" className="py-20 sm:py-28 bg-[#FBF6EF] border-t border-[#F1E5D5]">
+    <section id="gallery" className="py-20 sm:py-28 bg-[#FCFBF7] border-t border-[#C59B27]/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="text-xs font-bold tracking-widest text-[#C9513D] uppercase mb-2">
-              OUR WEDDING & EVENT PORTFOLIO
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F8F3EB] border border-[#C59B27]/30 text-[#C59B27] text-xs font-semibold tracking-[0.2em] uppercase mb-3">
+              <span>OUR CELEBRATION PORTFOLIO</span>
             </div>
-            <h2 className="font-serif-heading font-bold text-3xl sm:text-5xl text-[#481B22] leading-tight">
+            <h2 className="font-serif-luxury font-bold text-3xl sm:text-5xl text-[#2D1115] leading-tight">
               A Glimpse Into The Celebrations
             </h2>
-            <p className="mt-2 text-sm sm:text-base text-[#481B22]/70 font-sans">
-              Sacred mandaps, Haldi marigold urlis, vibrant Mehendi lounges, and evening party plot setups.
+            <p className="mt-2 text-sm sm:text-base text-[#5C3A40] font-sans">
+              Sacred Lagna mandaps, Haldi marigold urlis, vibrant Mehendi lounges, and evening party plot setups.
             </p>
           </div>
 
           {/* Filter Tabs */}
-          <div className="flex flex-wrap gap-2 p-1.5 bg-white rounded-xl border border-[#E2D2C0] shadow-sm">
+          <div className="flex flex-wrap gap-2 p-1.5 bg-white rounded-2xl border border-[#C59B27]/25 shadow-sm">
             {filters.map((filter) => (
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold tracking-wide transition-all cursor-pointer ${
                   activeFilter === filter
-                    ? "bg-[#C9513D] text-white shadow-sm"
-                    : "text-[#481B22]/70 hover:text-[#481B22] hover:bg-[#F1E5D5]"
+                    ? "gold-gradient-bg text-[#2D1115] font-bold shadow-sm"
+                    : "text-[#5C3A40] hover:text-[#2D1115] hover:bg-[#F8F3EB]"
                 }`}
               >
                 {filter}
@@ -89,7 +89,7 @@ export const PortfolioGallery: React.FC = () => {
               <div
                 key={item.id}
                 onClick={() => setSelectedItem(item)}
-                className="h-[340px] sm:h-[360px] group relative rounded-2xl overflow-hidden border border-[#E2D2C0] shadow-sm bg-white cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                className="h-[340px] sm:h-[360px] group relative rounded-2xl overflow-hidden border border-[#C59B27]/30 shadow-sm bg-white cursor-pointer transition-all duration-500 hover:shadow-[0_16px_36px_rgba(45,17,21,0.12),0_0_0_1px_rgba(197,155,39,0.35)] hover:-translate-y-1.5"
               >
                 <img
                   src={item.image}
@@ -97,32 +97,32 @@ export const PortfolioGallery: React.FC = () => {
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = item.fallbackImage;
                   }}
-                  className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-700 ease-out"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   loading="lazy"
                   decoding="async"
                 />
 
                 {/* Scrim */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2D1115]/95 via-[#2D1115]/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
 
                 {/* Top Badge */}
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                  <span className={`text-[11px] font-bold px-2.5 py-1 rounded-full shadow-sm tracking-wide ${getBadgeColor(item.category)}`}>
+                  <span className="text-[11px] font-semibold px-3 py-1 rounded-full shadow-sm tracking-wide bg-[#2D1115]/85 border border-[#C59B27]/30 text-[#DFB15B]">
                     {item.ceremonyBadge}
                   </span>
-                  <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all group-hover:scale-110">
+                  <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all group-hover:gold-gradient-bg group-hover:text-[#2D1115]">
                     <ZoomIn className="w-4 h-4" />
                   </div>
                 </div>
 
                 {/* Bottom Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
-                  <div className="flex items-center gap-2 text-xs font-semibold text-[#E7A63A] uppercase tracking-wider mb-1">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-[#DFB15B] uppercase tracking-wider mb-1">
                     <span>{item.category}</span>
                     <span className="text-white/40">·</span>
                     <span className="text-white/80 font-normal">{item.location}</span>
                   </div>
-                  <h3 className="font-serif-heading font-bold text-lg sm:text-xl text-white leading-snug line-clamp-2">
+                  <h3 className="font-serif-luxury font-bold text-lg sm:text-xl text-white leading-snug line-clamp-2 drop-shadow">
                     {item.title}
                   </h3>
                 </div>
@@ -132,8 +132,8 @@ export const PortfolioGallery: React.FC = () => {
         </div>
 
         {/* Note on Real Portfolio */}
-        <div className="mt-8 text-center text-xs text-[#481B22]/60 font-sans">
-          All images showcase genuine Indian wedding décor, ritual altars, and party plot staging across Ahmedabad & Gujarat venues.
+        <div className="mt-8 text-center text-xs text-[#5C3A40] font-sans">
+          All images showcase genuine Indian wedding décor, ritual mandaps, and party plot staging across Ahmedabad & Gujarat venues.
         </div>
 
       </div>
@@ -141,14 +141,14 @@ export const PortfolioGallery: React.FC = () => {
       {/* Lightbox Modal */}
       {selectedItem && (
         <div
-          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6"
+          className="fixed inset-0 z-50 bg-[#2D1115]/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6"
           role="dialog"
           aria-modal="true"
         >
-          <div className="relative max-w-4xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl animate-in zoom-in-95 duration-200">
+          <div className="relative max-w-4xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl border border-[#C59B27]/40 animate-in zoom-in-95 duration-200">
             <button
               onClick={() => setSelectedItem(null)}
-              className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/60 hover:bg-[#C9513D] text-white flex items-center justify-center transition-colors cursor-pointer"
+              className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-[#2D1115]/80 hover:gold-gradient-bg hover:text-[#2D1115] text-white flex items-center justify-center transition-all cursor-pointer shadow-md"
               aria-label="Close image modal"
             >
               <X className="w-5 h-5" />
@@ -165,12 +165,12 @@ export const PortfolioGallery: React.FC = () => {
               />
             </div>
 
-            <div className="p-6 bg-[#FFF9F2] flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-[#F1E5D5]">
+            <div className="p-6 bg-[#FCFBF7] flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-[#C59B27]/20">
               <div>
-                <span className="text-xs font-bold text-[#C9513D] uppercase tracking-wider">
+                <span className="text-xs font-bold text-[#C59B27] uppercase tracking-wider">
                   {selectedItem.ceremonyBadge} • {selectedItem.location}
                 </span>
-                <h3 className="font-serif-heading font-bold text-xl text-[#481B22] mt-0.5">
+                <h3 className="font-serif-luxury font-bold text-2xl text-[#2D1115] mt-0.5">
                   {selectedItem.title}
                 </h3>
               </div>
@@ -178,7 +178,7 @@ export const PortfolioGallery: React.FC = () => {
               <a
                 href="#contact"
                 onClick={() => setSelectedItem(null)}
-                className="px-5 py-2.5 bg-[#C9513D] hover:bg-[#b84330] text-white text-xs font-semibold rounded-lg text-center transition-colors shrink-0"
+                className="px-6 py-3 gold-gradient-bg text-[#2D1115] text-xs font-bold uppercase tracking-wider rounded-xl text-center transition-all shadow-sm hover:shadow-md shrink-0"
               >
                 Inquire For This Ceremony →
               </a>

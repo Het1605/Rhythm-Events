@@ -28,22 +28,22 @@ export const CategoryStrip: React.FC = () => {
   };
 
   return (
-    <section className="bg-white border-y border-[#F1E5D5] py-4 sm:py-5 px-4 sm:px-6">
+    <section className="bg-[#FFFFFF] border-y border-[#C59B27]/20 py-4 sm:py-5 px-4 sm:px-6 shadow-[0_2px_10px_rgba(45,17,21,0.03)]">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 overflow-x-auto scrollbar-none py-1">
-        <div className="text-xs font-bold uppercase tracking-wider text-[#481B22]/60 shrink-0 hidden md:block">
-          Gujarat Celebrations:
+        <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#C59B27] shrink-0 hidden md:block">
+          Sacred Ceremonies:
         </div>
 
-        <div className="flex items-center gap-2.5 sm:gap-4 justify-between w-full md:w-auto">
+        <div className="flex items-center gap-2.5 sm:gap-3.5 justify-between w-full md:w-auto">
           {QUICK_CATEGORIES.map((cat) => (
             <a
               key={cat.id}
               href={`#celebrations-${cat.id}`}
               onClick={(e) => handleCategoryClick(e, cat.id)}
-              className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#FFF9F2] hover:bg-[#F1E5D5] border border-[#F1E5D5] transition-all shrink-0 group text-xs sm:text-sm font-semibold text-[#481B22]"
+              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#FCFBF7] hover:bg-[#F8F3EB] border border-[#C59B27]/25 hover:border-[#C59B27] hover:shadow-[0_2px_12px_rgba(197,155,39,0.18)] transition-all shrink-0 group text-xs font-semibold tracking-wide text-[#2D1115]"
             >
               {getIcon(cat.id)}
-              <span className="group-hover:text-[#C9513D] transition-colors whitespace-nowrap">
+              <span className="group-hover:text-[#C59B27] transition-colors whitespace-nowrap">
                 {cat.label}
               </span>
             </a>
